@@ -4,25 +4,26 @@ public class TestDemo {
 
 
   public int addPositive(int a, int b) {
-    if (a <= 0 || b <= 0) {
-       throw new IllegalArgumentException("Both parameters must be positive!");
+    if (a <= 0 || b <= 0) { // if 0 or less
+       throw new IllegalArgumentException("Both parameters must be positive!"); // throw exception
     }
-    return (a + b);
+    return (a + b); // intended operation and result
 
   }
   
   
-  public int randomNumberSquared() {
-    int number = getRandomInt();
-    int squared = number * number;
-    return squared;
+  public int randomNumberSquared() { // randomly generate number and square it
+    int number = getRandomInt(); // commit number to variable
+    int squared = number * number; // square
+    return squared; // return
   }
   
   
-  public int getRandomInt() {
+  public int getRandomInt() { // supporting method for random Int generation
     
-    Random random = new Random();
+    Random random = new Random(); // new Random object
     
-    return random.nextInt(10) + 1;
+    return random.nextInt(10) + 1; // nextInt to generate number from index(0) to provided int
+                                   // +1 to offset index
   }
 }

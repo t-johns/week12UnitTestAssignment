@@ -17,12 +17,12 @@ class TestDemoTest {
 
   @BeforeEach
   void setUp() throws Exception {
-    testDemo = new TestDemo();
+    testDemo = new TestDemo(); //provide new object each test
   }
 
   @ParameterizedTest
-  @MethodSource("TestDemoTest#argumentsForAddPositive")
-  void assertThatTwoPositiveNumbersAreAddedCorrectly(int a, int b, int expected,
+  @MethodSource("TestDemoTest#argumentsForAddPositive") //path
+  void assertThatTwoPositiveNumbersAreAddedCorrectly(int a, int b, int expected, 
       Boolean expectException) {
     // Given: two positive numbers
 
@@ -40,7 +40,7 @@ class TestDemoTest {
     }
   }
 
-  public static Stream<Arguments> argumentsForAddPositive() {
+  public static Stream<Arguments> argumentsForAddPositive() { // test cases to prove working viablity
     
     return Stream.of(
         arguments(2, 4, 6, false),
@@ -53,7 +53,7 @@ class TestDemoTest {
   }
   
   @Test
-  void assertThatNumberSquaredIsCorrect() {
+  void assertThatNumberSquaredIsCorrect() { // squared number test 
     TestDemo mockDemo = spy(testDemo);
     int a = 5;
     
