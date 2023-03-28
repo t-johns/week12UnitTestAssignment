@@ -32,6 +32,7 @@ class TestDemoTest {
 
     if (!expectException) {
       assertThat(testDemo.addPositive(a, b)).isEqualTo(expected);
+      
     } else {
       assertThatThrownBy(() -> testDemo.addPositive(a, b))
           .isInstanceOf(IllegalArgumentException.class);
